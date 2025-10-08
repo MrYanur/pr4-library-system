@@ -8,11 +8,19 @@ namespace LibrarySystem
         {
             Console.Write("Enter two integers: ");
             string[] input = Console.ReadLine().Split();
+
+            if (input.Length < 2)
+            {
+                Console.WriteLine("Error: Please enter two numbers separated by space.");
+                Console.ReadKey();
+                return;
+            }
+
             int a = int.Parse(input[0]);
             int b = int.Parse(input[1]);
 
-            Console.WriteLine($"You entered: {a} and {b}");
-            Console.ReadKey(); // чтобы окно не закрывалось сразу
+            Console.WriteLine($"Sum: {a + b}");
+            Console.ReadKey();
         }
     }
 }
